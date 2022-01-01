@@ -4,7 +4,7 @@ import base64
 from github import Github
 from pprint import pprint
 
-token = input("Enter your OAuth Token:")
+token = input("Enter your Token:")
 
 # pygithub object
 g = Github(token)
