@@ -28,7 +28,7 @@ def getRepoCommits(repo):
     
 def printRepo(user):
     count = 0
-    print("--------------------------------------------")
+    print("---------------------------------------------")
     for repo in user.get_repos():
         count =  count + 1
         if repo is not None:
