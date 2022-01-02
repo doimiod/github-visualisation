@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i,900,900i" type="text/css" media="all">
 
-   <!-- <link rel="stylesheet" href="stylesheet.css"> -->
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
@@ -41,15 +41,17 @@
 
     <div class="piechart">
 
-      <!-- <h2>Languages used</h2> -->
-      <canvas id="languagePiechart" width="700" height="300"></canvas>
+       <!-- <h2>Languages used</h2> -->
+      <canvas class = "bullshitPie" id="languagePiechart" ></canvas>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 
     </div>
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    
     <script src="app.js"></script>
 
   </body>

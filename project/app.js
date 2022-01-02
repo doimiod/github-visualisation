@@ -117,69 +117,160 @@ function languagesInfo(userName, repoData){
 
     
 
-//    languagesPieChart(languageLabel, langageUsage, colours)
+    languagesPieChart(languageLabel, langageUsage, colours)
 
 
-let ctx = document.getElementById("languagePiechart").getContext("2d");
-    //let myChart = document.getElementById(ctx).getContext('2d');
+// let ctx = document.getElementById("languagePiechart").getContext("2d");
+//     //let myChart = document.getElementById(ctx).getContext('2d');
 
-    chart1 = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: languageLabel,
-            datasets: [{
-                label: 'languages',
-                data: langageUsage,
-                backgroundColor: colours,
-                borderWidth: 1,
-                borderColor: '#444',
-                hoverBorderWidth: 2,
-                hoverBorderColor: '#000'
-            }],
+//     chart1 = new Chart(ctx, {
+//         type: 'pie',
+//         data: {
+//             labels: languageLabel,
+//             datasets: [{
+//                 label: 'languages',
+//                 data: langageUsage,
+//                 backgroundColor: colours,
+//                 borderWidth: 1,
+//                 borderColor: '#444',
+//                 hoverBorderWidth: 2,
+//                 hoverBorderColor: '#000'
+//             }],
 
-        },
-        options: {
-            title: {
-                display: true,
-                text: "Languages",
-                fontSize: 20
-            },
-            legend: {
-                display: true,
-                position: 'bottom',
-                labels: {
-                    fontColor: '#000'
-                }
-            },
-            layout: {
-                padding: {
-                    left: 50,
-                    right: 0,
-                    bottom: 0,
-                    top: 0
-                }
-            },
-            tooltips: {
-                enabled: true
-            }
-        }
-    });
-
-
-    // languageLabel = [];
-    // langageUsage = [];
-    // colours = [];
+//         },
+//         options: {
+//             title: {
+//                 display: true,
+//                 text: "Languages",
+//                 fontSize: 20
+//             },
+//             legend: {
+//                 display: true,
+//                 position: 'bottom',
+//                 labels: {
+//                     fontColor: '#000'
+//                 }
+//             },
+//             layout: {
+//                 padding: {
+//                     left: 50,
+//                     right: 0,
+//                     bottom: 0,
+//                     top: 0
+//                 }
+//             },
+//             tooltips: {
+//                 enabled: true
+//             }
+//         }
+//     });
 
 
+//     // languageLabel = [];
+//     // langageUsage = [];
+//     // colours = [];
 
-}
+
+
+ }
 
 
 
 function languagesPieChart(languageLabel, langageUsage, colours){
 
 
+
+    // console.log(languageLabel)
+    //            console.log(langageUsage)
+
+               let chartStatus = Chart.getChart("languagePiechart");
+                if (chartStatus != undefined) {
+                    chartStatus.destroy();
+                }   
+
+               let ctx = document.getElementById("languagePiechart").getContext("2d");
+               myChart = new Chart(ctx, {
+           
+                   type: "pie",
+                   data: { 
+                       datasets: [{
+                           data: langageUsage,
+                           backgroundColor: colours,
+                           label: 'Languages used',
+                       }],
+                       labels: languageLabel,
+                   },
+                   
+                   options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                       title: {
+                           display: true,
+                           text: "Languages used",
+                           fontSize: 100,
+                       }
+                   }
+           
+                } )
+                
+           
+               
+           }
+               
+            
+
+
+    //             let ctx = document.getElementById("languagePiechart").getContext("2d");
+                
+
+    // chart1 = new Chart(ctx, {
+    //     type: 'pie',
+    //     data: {
+    //         labels: languageLabel,
+    //         datasets: [{
+    //             label: 'languages',
+    //             data: langageUsage,
+    //             backgroundColor: colours,
+    //             borderWidth: 1,
+    //             borderColor: '#444',
+    //             hoverBorderWidth: 2,
+    //             hoverBorderColor: '#000'
+    //         }],
+
+    //     },
+    //     options: {
+    //         title: {
+    //             display: true,
+    //             text: "Languages used",
+    //             fontSize: 20
+    //         },
+    //         legend: {
+    //             display: true,
+    //             position: 'bottom',
+    //             labels: {
+    //                 fontColor: '#000'
+    //             }
+    //         },
+    //         layout: {
+    //             padding: {
+    //                 left: 50,
+    //                 right: 0,
+    //                 bottom: 0,
+    //                 top: 0
+    //             }
+    //         },
+    //         tooltips: {
+    //             enabled: true
+    //         }
+    //     }
+    // });
+
+
+
+   
+            //    var myChart = null;
     // let ctx = document.getElementById("languagePiechart").getContext("2d");
+    // //context.clearRect(0, 0, canvas.width, canvas.height);
     // myChart = new Chart(ctx, {
 
     //     type: "pie",
@@ -193,14 +284,21 @@ function languagesPieChart(languageLabel, langageUsage, colours){
     //     },
         
     //     options: {
-    //         responsive: true
-    //     }
-        
-        
+    //         // responsive: false,
+    //         legend: { display: false },
+    //         // 自動サイズ変更をしない
+    //         // タイトル
+    //         title: {
+    //             display: true,
+    //             fontSize: 16,
+    //             text: 'Languages used',
+    // },
+    //     },
+
     //  } )
 
     
-}
+// }
 
 
 
