@@ -185,7 +185,7 @@ function commitInWeekGraph(dayLabel, commitData, colour){
         type: 'line',
         data: {
             datasets: [{
-                label: "number of commits",
+                label: "Number of commits in a week",
                 data: commitData,
                 backgroundColor: colour,
             }],
