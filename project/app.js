@@ -1,19 +1,12 @@
 function getUserInfo(){
 
  	var userName = document.getElementById("user-input").value;
-     //alert(userName)
-
        fetch("https://api.github.com/users/"+userName)
        .then(Response => Response.json())
        .then(data => {
         console.log(data)
-        var imgUrl= data.avatar_url.toString();
-
-        // var repoUrl = data.repos_url.toString();
-    
+        var imgUrl= data.avatar_url.toString();;
         getBasicInfo(data, imgUrl, userName)
-         // document.getElementById("user-basic-information").lineHeight = 1.5;
-         //  = `<img src= "${data.avator_url}"/>`
 
        })
        
@@ -22,11 +15,8 @@ function getUserInfo(){
        .then(Response => Response.json())
        .then(repoData => {
         languagesInfo(userName, repoData)
-       // Top3CommitedReposGraph(userName, repoData)
-       commitInWeekGraphInfo(userName, repoData)
-       Top3CommitedReposInfo(userName, repoData)
-        //console.log(repoData)
-
+        commitInWeekGraphInfo(userName, repoData)
+        Top3CommitedReposInfo(userName, repoData)
        })
 
 }
@@ -77,11 +67,8 @@ function languagesInfo(userName, repoData){
                
                if(add==true)
                {
-
-                // languageLabel.push(language);
-                // langageUsage.push(data[language]);
-                    languageLabel[l]=language
-                    langageUsage[l]=data[language]
+                   languageLabel[l]=language
+                   langageUsage[l]=data[language]
                    colours[l]= 　"rgb(" + (~~(256 * Math.random())) + ", " + (~~(256 * Math.random())) + ", " + (~~(256 * Math.random())) + ")" 
                    l++;
                }
@@ -92,26 +79,20 @@ function languagesInfo(userName, repoData){
                console.log(langageUsage)
                console.log(colours)
                
-               sumOfLanguageUsage = sumOfLanguageUsage + data[language]
+               //sumOfLanguageUsage = sumOfLanguageUsage + data[language]
 
             }
 
         })
-    }    
-
-
-    
+    }
 
     languagesPieChart(languageLabel, langageUsage, colours)
-
-    
 
 }
 
 
 function languagesPieChart(languageLabel, langageUsage, colours){
-
-
+    
     let chartStatus = Chart.getChart("languagePiechart");
     if (chartStatus != undefined) {
         chartStatus.destroy();
@@ -132,13 +113,7 @@ function languagesPieChart(languageLabel, langageUsage, colours){
        
        options: {
          responsive: true,
-       // maintainAspectRatio: false,
-         //position: 'fixed',
-        //  title: {
-        //        display: true,
-        //        text: 'Languages used',
-        //        fontSize: 50,
-        //    },
+
        },
 
     } )
@@ -147,8 +122,7 @@ function languagesPieChart(languageLabel, langageUsage, colours){
 
 
 function commitInWeekGraphInfo(userName, repoData) {
-
-
+    
     let dayLabel = [];
     let commitData = [];
     let colour = [];
@@ -234,6 +208,9 @@ function Top3CommitedReposInfo(userName, repoData) {
 
     let repoName = [];
     let numOfComArray = [];
+    let comRepoColour = [];
+    let numOfComData = [];
+    let repoLabel = [];
     let numOfCom=0;
 
     for(let i=0 ; repoData[i]!= null; i++){
@@ -260,20 +237,27 @@ function Top3CommitedReposInfo(userName, repoData) {
                 }
             }
 
+            for ( let l = 0; l<3; l++){
+                numOfComData[l] = numOfComArray[l];
+                repoLabel[l]=repoName[l];
+                comRepoColour[l]="rgb(" + (~~(256 * Math.random())) + ", " + (~~(256 * Math.random())) + ", " + (~~(256 * Math.random())) + ")";
+                }
+
 
         })
-        comRepoColour[i]="rgb(" + (~~(256 * Math.random())) + ", " + (~~(256 * Math.random())) + ", " + (~~(256 * Math.random())) + ")";
+        
     }
 
-    console.log(repoName)
-    console.log(numOfComArray)
-
-
-    Top3CommitedReposGraph(numOfComArray, repoName, comRepoColour )
+    // console.log(repoName)
+    // console.log(numOfComArray)
+    // console.log(numOfComData)
+    // console.log(repoLabel)
+    
+    Top3CommitedReposGraph(numOfComData, repoLabel, comRepoColour )
 }
 
 
-function Top3CommitedReposGraph(numOfComArray, repoName, comRepoColour ){
+function Top3CommitedReposGraph(numOfComData, repoLabel, comRepoColour ){
 
     let chartStatus = Chart.getChart("top3-repo");
     if (chartStatus != undefined) {
@@ -287,10 +271,10 @@ function Top3CommitedReposGraph(numOfComArray, repoName, comRepoColour ){
         data: {
             datasets: [{
                 label: "Top 3 Most Commmitted Repositories",
-                data: [numOfComArray[0], numOfComArray[1], numOfComArray[2],],
+                data: numOfComData,
                 backgroundColor: comRepoColour,
             }],
-            labels: [repoName[0], repoName[1], repoName[2]],
+            labels: repoLabel,
         },
         options: {
             responsive: true,
@@ -306,7 +290,13 @@ function Top3CommitedReposGraph(numOfComArray, repoName, comRepoColour ){
 }
 
 
-
+       // maintainAspectRatio: false,
+         //position: 'fixed',
+        //  title: {
+        //        display: true,
+        //        text: 'Languages used',
+        //        fontSize: 50,
+        //    },
 // let ctx = document.getElementById("languagePiechart").getContext("2d");
 //     //let myChart = document.getElementById(ctx).getContext('2d');
 
