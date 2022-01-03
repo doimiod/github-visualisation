@@ -10,7 +10,6 @@ function getUserInfo(){
 
        })
        
-       
        fetch("https://api.github.com/users/"+userName+"/repos")
        .then(Response => Response.json())
        .then(repoData => {
@@ -43,9 +42,9 @@ function languagesInfo(userName, repoData){
     let languageLabel = [];
     let langageUsage = [];
     let colours = [];
-    let sumOfLanguageUsage = 0;
     let l = 0;
     let add = true;
+    // let sumOfLanguageUsage = 0;
 
     for(let i=0 ; repoData[i]!= null; i++){
         fetch("https://api.github.com/repos/"+userName+"/"+repoData[i].name+"/languages")
