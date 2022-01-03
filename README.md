@@ -1,3 +1,3 @@
 # github-visualisation
 
-For github visualisation assignment, plese go to the folder called project. Then, there are three codes, app.js, index.html and style.css. To run the code, please open the 
+For github visualisation assignment, plese go to the folder called project. Then, there are three codes, app.js, index.html and style.css. To run the code, please downlad that folder and open the index.html. Then, please type user name and push submmit button. It can be seen that there are user's basic information, such as name or workplace. Furthermore, for languages and commmits information, please zoom in/out the screen. Then it is visible.(I added a video demonstrating how to see languages and commmits information. If you can not see that information, please watch the video.)  
