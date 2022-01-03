@@ -24,6 +24,7 @@ function getUserInfo(){
         languagesInfo(userName, repoData)
        // Top3CommitedReposGraph(userName, repoData)
        commitInWeekGraphInfo(userName, repoData)
+       Top3CommitedReposInfo(userName, repoData)
         //console.log(repoData)
 
        })
@@ -228,7 +229,7 @@ function commitInWeekGraph(dayLabel, commitData, colour){
 
 }
 
-function Top3CommitedReposGraph(userName, repoData) {
+function Top3CommitedReposInfo(userName, repoData) {
 
 
     let repoName = [];
@@ -243,52 +244,68 @@ function Top3CommitedReposGraph(userName, repoData) {
            for(numOfCom=0;numOfCom<data.length;numOfCom++){}
             repoName[i]=repoData[i].name;
             numOfComArray[i]=numOfCom;
+            
+            for ( let j = 1; j<numOfComArray.length; j++)
+            {
+                let k = j - 1;
+                while(k>=0 && numOfComArray[k]<numOfComArray[k+1])
+                {
+                    let temp = numOfComArray[k];
+                    let repoTemp = repoName[k];
+                    numOfComArray[k] = numOfComArray[k+1];
+                    repoName[k]=repoName[k+1];
+                    numOfComArray[k+1] = temp;
+                    repoName[k+1] = repoTemp;
+                    k--;
+                }
+            }
+
+
         })
+        comRepoColour[i]="rgb(" + (~~(256 * Math.random())) + ", " + (~~(256 * Math.random())) + ", " + (~~(256 * Math.random())) + ")";
     }
 
     console.log(repoName)
     console.log(numOfComArray)
 
-    let numOfComArray2 = [];
 
-    for ( let j = 1; j<numOfComArray.length; j++)
-    {
-        let i = j - 1;
-        while(i>=0 && numOfComArray[i]>numOfComArray[i+1])
-        {
-          let temp = numOfComArray[i];
-          let repoTemp = repoName[i];
-          numOfComArray[i] = numOfComArray[i+1];
-          repoName[i]=repoName[i+1];
-          numOfComArray[i+1] = temp;
-          repoName[i+1] = repoTemp;
-          i--;
+    Top3CommitedReposGraph(numOfComArray, repoName, comRepoColour )
+}
+
+
+function Top3CommitedReposGraph(numOfComArray, repoName, comRepoColour ){
+
+    let chartStatus = Chart.getChart("top3-repo");
+    if (chartStatus != undefined) {
+        chartStatus.destroy();
+    }   
+
+    let ctx = document.getElementById("top3-repo").getContext('2d');
+
+   let myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            datasets: [{
+                label: "Top 3 Most Commmitted Repositories",
+                data: [numOfComArray[0], numOfComArray[1], numOfComArray[2],],
+                backgroundColor: comRepoColour,
+            }],
+            labels: [repoName[0], repoName[1], repoName[2]],
+        },
+        options: {
+            responsive: true,
+            title: {
+                display: true,
+                fontSize: 20,
+            }
         }
-      }
+    });
 
-    // let temp = 0;
-    // 	for (let i = 1; i < numOfComArray.length; i++)
-    // 	{
-    // 		for(let j = i ; j > 0 ; j--)
-    // 		{
-    // 			if(numOfComArray[j] < numOfComArray[j-1])
-    // 			{
-    // 				temp = numOfComArray[j];
-    // 				numOfComArray[j] = numOfComArray[j-1];
-    // 				numOfComArray[j-1] = temp;
-    // 			}
-    // 		}
-    // 	}
 
-    let i=0;
-    i=numOfComArray[0];
-
-      console.log(repoName)
-      console.log(numOfComArray)
-      console.log(numOfComArray)
-      console.log(i);
 
 }
+
+
 
 // let ctx = document.getElementById("languagePiechart").getContext("2d");
 //     //let myChart = document.getElementById(ctx).getContext('2d');
@@ -444,3 +461,20 @@ function Top3CommitedReposGraph(userName, repoData) {
 //  var ttt = "kkk";
 //  document.getElementById("str").innerHTML = ttt;
 // alert(ttt)
+
+
+
+
+   // let temp = 0;
+    // 	for (let i = 1; i < numOfComArray.length; i++)
+    // 	{
+    // 		for(let j = i ; j > 0 ; j--)
+    // 		{
+    // 			if(numOfComArray[j] < numOfComArray[j-1])
+    // 			{
+    // 				temp = numOfComArray[j];
+    // 				numOfComArray[j] = numOfComArray[j-1];
+    // 				numOfComArray[j-1] = temp;
+    // 			}
+    // 		}
+    // 	}
