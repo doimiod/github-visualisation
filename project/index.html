@@ -17,7 +17,7 @@
          <!-- <form id="user-form" autocomplete="off"> -->
             <input type="text" id="user-input" placeholder="enter user name" required> 
             <input id="btn" type="submit" value="submit" onclick="getUserInfo();">   
-         <!-- </form> -->  
+          </form>   
     </div>
     
     <br><br>
@@ -39,19 +39,28 @@
 
 
 
-    <div class="piechart">
-
-       <!-- <h2>Languages used</h2> -->
-      <canvas class = "bullshitPie" id="languagePiechart" ></canvas>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-
-    </div>
 
 
+   <div class="wrapper"> 
+     <div class="piechart"> 
 
-    
+       <div class="chart-title">
+         <h2>Languages used</h2>
+      </div>
+      <canvas class = "Pie" id="languagePiechart" style="display: block;"></canvas>
+     </div>
+  </div>     
+  
+  
+  <canvas id="commits-in-a-week" width="700" height="300"></canvas>
+
+
+<!-- style="display: block;" -->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script src="app.js"></script>
 
   </body>

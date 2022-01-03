@@ -1,7 +1,21 @@
- .bullshitPie {
+ .Pie {
 
     position: relative;
-    bottom: 500px;
-    left: 100px;
+    bottom: 1000px;
+    left: 80px;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
 
-} 
+}  
+
+.chart-title{
+
+    position: relative;
+    bottom: 600px;
+    left: 150px;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    
+}
