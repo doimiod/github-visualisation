@@ -1,3 +1,15 @@
+var input = document.getElementById("user-input");
+// Execute a function when the user presses a key on the keyboard
+input.addEventListener("keypress", function(event) {
+    // If the user presses the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        getUserInfo()
+
+    }
+});
+
 async function getUserInfo(){
     event.preventDefault();
 
@@ -22,6 +34,8 @@ async function getUserInfo(){
     
 
 }
+
+
 
 
 async function getBasicInfo(userName, token){
@@ -154,6 +168,11 @@ async function commitInWeekInfo(userName, repoData, token) {
     let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     let l=0;
     let add = true;
+
+    let chartStatus = Chart.getChart("commits-in-a-week");
+    if (chartStatus != undefined) {
+        chartStatus.destroy();
+    }   
 
     for (i in repoData) {
 
