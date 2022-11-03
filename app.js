@@ -13,8 +13,6 @@ input.addEventListener("keypress", function(event) {
 async function getUserInfo(){
     event.preventDefault();
 
-    // clearBox()
-
     var userName = document.getElementById("user-input").value;
     let token = document.getElementById("token").value;
 
@@ -34,8 +32,6 @@ async function getUserInfo(){
     
 
 }
-
-
 
 
 async function getBasicInfo(userName, token){
