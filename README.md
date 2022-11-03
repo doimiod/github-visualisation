@@ -7,7 +7,7 @@ Firstly, please clone my repository by the command below
 git clone https://github.com/doimiod/github-visualisation.git
 ```
 
-Secondry, please `cd github-visualisation` to the folder and type this command
+Secondry, please go to the folder and type this command
 ```
 docker build -t github-visualise .
 ```
