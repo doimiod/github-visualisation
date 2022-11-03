@@ -13,7 +13,7 @@ docker build -t github-visualise .
 ```
 Then, run the code by the following command
 ```
-docker run -d --name github_visualise -p 55:00 github-visualise
+docker run -d --name github_visualise -p 5500:80 github-visualise
 ```
 
 You can see my project at localhost:5500
