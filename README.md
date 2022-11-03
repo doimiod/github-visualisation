@@ -1,3 +1,20 @@
 # github-visualisation
 
-For github visualisation assignment, plese go to the folder called project. Then, there are three source codes for this assignment, which are app.js, index.html and style.css. To run the code, please downlad that folder and open the index.html or copy path from index.html. Then, please type user name and push submmit button. It can be seen that there are user's basic information, such as name or workplace. Furthermore, for languages and commmits information, please zoom in/out the screen. Then it is visible.(I added a video demonstrating how to see languages and commmits information. If you can not see that information, please watch the video.) In the project file, there are app.js, index.html, style.css, two pictures of my work and the video of my work.
+In order to run my code, you need docker.
+
+Firstly, please clone my repository by the command below
+```
+git clone https://github.com/doimiod/github-visualisation.git
+```
+
+Secondry, please cd to the folder and type this command
+```
+docker build -t github-visualise
+```
+Then, run the code by the following command
+```
+docker run -d --name github_visualise -p 80:80 github-visualise
+
+```
+
+You can see my project at localhost:5500
