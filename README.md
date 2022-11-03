@@ -13,7 +13,7 @@ docker build -t github-visualise
 ```
 Then, run the code by the following command
 ```
-docker run -d --name github_visualise -p 50:50 github-visualise
+docker run -d --name github_visualise -p 55:00github-visualise
 
 ```
 
