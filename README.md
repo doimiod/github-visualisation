@@ -9,7 +9,7 @@ git clone https://github.com/doimiod/github-visualisation.git
 
 Secondry, please cd to the folder and type this command
 ```
-docker build -t github-visualise
+docker build -t github-visualise .
 ```
 Then, run the code by the following command
 ```
