@@ -1,0 +1,112 @@
+header, form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media all and (max-width: 10000px) {
+    
+    .user-basic-information{
+        flex-flow: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .piechart{
+        width: 500px;
+        height: 500px;
+    }
+    
+    .graphs{
+        margin-top: 50px;
+        flex-flow: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+    
+/* .user-basic-information{
+        flex-flow: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+.graphs{
+    margin-top: 50px;
+    flex-flow: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+@media all and (max-width: 1000px) {
+    
+    .user-basic-information{
+        flex-flow: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .graphs{
+        margin-top: 50px;
+        flex-flow: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+}
+    
+
+/* header, form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* .userImg, .name, .user-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+
+
+
+/* .piechart, .week-graph , .committed-repo{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+
+}   */
+
+/* .chart-title{
+
+    position: relative;
+    bottom: 600px;
+    left: 150px;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    
+} */
+
+/* .line{
+
+    position: relative;
+    bottom: 1000px;
+    left: 80px;
+    margin: 0 auto;
+
+
+} */
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Github Visualisation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i,900,900i" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <title>GitHub Visualizer</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+  </head>
+
+  <body>
+
+    <header>
+      <h1> Github Visualisation</h1>
+    </header>
+
+    <form>
+      <input id="user-input" type="text" placeholder="user name here">
+    </form>
+    <form>
+      <input id="token" type="text" placeholder="token here (optional)">
+      <button id="submit-button" onclick="getUserInfo()">
+        <i class="fas fa-arrow-right"></i>
+      </button>   
+    </form>
+
+    <div class="user-basic-information">
+      <div class= "userImg" id = "userImg"></div>
+      <div class= "name" id = "name"></div>
+      <div class= "user-name" id = "user-name"></div>
+      <div class="followings" id = "followings"></div>
+      <div class="follwers" id = "followers"></div>
+      <div class="work-place" id = "work-place"></div>
+      <div class="location" id = "location"></div>
+      <div id = "date-joined"></div>
+      <div id = "last-activity"></div>
+      <div id = "the-num-of-repos"></div>
+      <div id = "bio"></div>
+    </div>
+    
+    <div class="graphs">
+
+     <div class="piechart"> 
+      <canvas class = "Pie" id="languagePiechart" style="display: block;"></canvas>
+     </div>
+     
+     <div class="week-graph">
+      <canvas class="line" id="commits-in-a-week" width="700" height="300"></canvas>
+    </div>
+    
+    <div class="committed-repo">
+      <canvas class="line" id="top3-repo" width="700" height="300"></canvas>
+    </div>
+  </div>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script> -->
+     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+     <script src="app.js"></script>
+
+  </body>
+
+
+</html>  
+
+<!-- <p class="user name">user name</p> -->
+        <!-- input area -->
+        <!-- <input type="text" name="user-input" value="enter user name"> -->
+        <!-- <label for="user-input">user name :</label>-->
+        
+        
+        
+        <!--  <input type="button" value="submit" onclick="getUserName();"> -->
+
+
+
+
+
