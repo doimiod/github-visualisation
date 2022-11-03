@@ -1,4 +1,7 @@
-function getUserInfo(){
+async function getUserInfo(){
+    event.preventDefault();
+
+    console.log("ojvreoifopeir")
 
  	var userName = document.getElementById("user-input").value;
        fetch("https://api.github.com/users/"+userName)
@@ -17,6 +20,8 @@ function getUserInfo(){
         commitInWeekGraphInfo(userName, repoData)
         Top3CommitedReposInfo(userName, repoData)
        })
+
+       console.log('jkkk')
 
 }
 
@@ -68,7 +73,7 @@ function languagesInfo(userName, repoData){
                {
                    languageLabel[l]=language
                    langageUsage[l]=data[language]
-                   colours[l]= 　"rgb(" + (~~(256 * Math.random())) + ", " + (~~(256 * Math.random())) + ", " + (~~(256 * Math.random())) + ")" 
+                   colours[l]= "rgb(" + (~~(256 * Math.random())) + ", " + (~~(256 * Math.random())) + ", " + (~~(256 * Math.random())) + ")" 
                    l++;
                }
                
@@ -92,10 +97,13 @@ function languagesInfo(userName, repoData){
 
 function languagesPieChart(languageLabel, langageUsage, colours){
     
+
     let chartStatus = Chart.getChart("languagePiechart");
     if (chartStatus != undefined) {
         chartStatus.destroy();
     }   
+
+    document.getElementById("languagePiechart").innerHTML = `<h2>Languages used</h2></div>`;
 
    let ctx = document.getElementById("languagePiechart").getContext('2d');
    let myChart = new Chart(ctx, {
@@ -247,10 +255,7 @@ function Top3CommitedReposInfo(userName, repoData) {
         
     }
 
-    // console.log(repoName)
-    // console.log(numOfComArray)
-    // console.log(numOfComData)
-    // console.log(repoLabel)
+
     
     Top3CommitedReposGraph(numOfComData, repoLabel, comRepoColour )
 }
