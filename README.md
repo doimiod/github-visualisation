@@ -24,6 +24,5 @@ You can see the screen as below and type your github user name and token(if you 
 
 Then, you can see the output as below.
 
-![Screenshot 2022-11-03 at 06 09 36](https://user-images.githubusercontent.com/91431813/199657375-c1f541c3-3f36-4740-a994-80a565e1a7ab.png)
-
-![Screenshot 2022-11-03 at 06 10 24](https://user-images.githubusercontent.com/91431813/199657380-fced221a-97df-4fad-8961-f09854a6c228.png)
+![Screenshot 2022-11-03 at 06 12 18](https://user-images.githubusercontent.com/91431813/199657521-e65b2f0b-9c0b-4b03-9b33-26bf5bf726bc.png)
+![Screenshot 2022-11-03 at 06 12 40](https://user-images.githubusercontent.com/91431813/199657568-2cd54192-624e-4e22-9b09-5da0a3930cb0.png)
