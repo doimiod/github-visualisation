@@ -23,13 +23,19 @@ header, form{
 
 
 @media all and (max-width: 10000px) {
-    
+
     .user-basic-information{
-        flex-flow: column;
-        display: absolute;
+        /* flex-flow: column; */
+        display: flex;
         justify-content: center;
         align-items: center;
     }
+
+    .user-info {
+        float: left;
+        margin-right: 40px;
+      }
+
 
     .piechart{
         width: 500px;
@@ -45,12 +51,12 @@ header, form{
     }
 }
     
-.user-basic-information{
+/* .user-basic-information{
         flex-flow: column;
         display: flex;
         justify-content: center;
         align-items: center;
-}
+} */
 
 /*.graphs{
     margin-top: 50px;

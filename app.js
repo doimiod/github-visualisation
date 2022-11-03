@@ -13,7 +13,7 @@ async function getUserInfo(){
     console.log(basicData)
 
     let repoData = await getUserRepo(userName, token)
-    
+    console.log(repoData)
 
     displayBasicInfo(basicData, userName)
     languagesInfo(userName, repoData, token)
